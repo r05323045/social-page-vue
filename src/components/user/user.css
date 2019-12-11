@@ -1,0 +1,61 @@
+.user-card {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+.user-card .avatar{
+    margin: auto;
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    outline: none;
+    margin-bottom: 10px;
+}
+.user-card .avatar.is-like {
+    box-shadow: 0 0 0 2px #e4365b;
+}
+.user-card .avatar.not-like {
+    border: 0;
+}
+.user-card .list-group{
+    display: flex;
+}
+.user-card .list-group-item{
+    font-size: 14px;
+    vertical-align: middle;
+    padding: 10px 20px;
+}
+.user-card .list-group-item .flag{
+    width: 16px;
+    height: 9px;
+    margin-bottom: 3px;
+    margin-right: 5px;
+}
+.user-card .list-group-item .female-icon{
+    margin-right: 5px;
+    font-size: 8px;
+    color: #e4365b;
+    display: inline-block;
+}
+.user-card .list-group-item .male-icon{
+    margin-right: 5px;
+    font-size: 8px;
+    color: #0c87ce;
+    display: inline-block;
+}
+.user-card .list-group-item .fa-baby{
+    margin-right: 5px;
+    font-size: 8px;
+    display: inline-block;
+}
+.user-card .list-group-item .fa-address-card{
+    margin-right: 5px;
+    font-size: 8px;
+    display: inline-block;
+}
+.user-card .list-group-item .fa-envelope{
+    margin-right: 5px;
+    font-size: 8px;
+    display: inline-block;
+}
