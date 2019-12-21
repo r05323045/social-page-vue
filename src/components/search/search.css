@@ -1,6 +1,7 @@
 .search .top-wrapper {
     width: 100%;
-    top: 80px;
+    top: 20px;
+    height: 40px;
     position: absolute;
     box-sizing: border-box;
 }

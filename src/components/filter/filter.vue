@@ -71,7 +71,7 @@
         props: {
             alldata: {
                 type: Array,
-                default: () => {}
+                default: () => []
             },
             filterOrSearch: '',
         },
@@ -107,7 +107,6 @@
                     this.copyOffilterOrSearch = 'filter'
                 }
                 this.$emit('filterOn', this.copyOffilterOrSearch)
-                this.flag()
             },
             valueCount: function(arr) {
                 const category = {}
@@ -198,12 +197,6 @@
                         break;
                 }            
             },
-            
-            flag(){
-                
-                console.log(`{${JSON.stringify(this.alldata)}}`)
-            } 
-            
         },
         computed: {
             

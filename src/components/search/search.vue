@@ -19,7 +19,7 @@
         props: {
             alldata: {
                 type: Array,
-                default: () => {}
+                default: () => []
             }
         },
         methods: {

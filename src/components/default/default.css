@@ -1,0 +1,20 @@
+.default {
+    height: 611px;
+    display: flex;
+    justify-content: center;
+}
+.default .carousel-item .img-fluid {
+    height: 611px;
+    object-fit: cover;
+}
+.default .btn {
+    position: absolute;
+    top: 40%;
+    z-index: 999;
+    border-radius: 50px;
+    font-size: 16px;
+    font-weight: 300;
+    color: white;
+    padding: 20px;
+
+}

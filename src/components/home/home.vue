@@ -34,9 +34,7 @@
   import User from '../user/user'
   import Myfilter from '../filter/filter'
   import Mysearch from '../search/search'
-
   export default {
-
     created() {
       this.showdata = this.alldata
       this.$nextTick(()=>{

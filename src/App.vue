@@ -1,19 +1,18 @@
 <template>
   <div id="app">
-    <Myheader></Myheader>
-    <Mynav @goToPage="goToPage=$event"></Mynav>
-    <Myhome :alldata="alldata" v-if="atHome"></Myhome>
-    <Myfavorites :alldata="alldata" v-if="!atHome"></Myfavorites>
+    <Mynav :alldata="alldata"></Mynav>
+    <Mydefault v-if="this.$route.path === '/default'"></Mydefault>
+    <Myhome :alldata="alldata" v-if="this.$route.path === '/home'"></Myhome>
+    <Myfavorites :alldata="alldata" v-if="this.$route.path === '/favorites'"></Myfavorites>
   </div>
 </template>
 
 <script>
   import Vue from 'vue'
-  import Myheader from './components/header/header'
+  import Mydefault from './components/default/default'
   import Mynav from './components/nav/nav'
   import Myfavorites from './components/favorites/favorites'
   import Myhome from './components/home/home'
-
   export default {
     name: 'App',
     data() {
@@ -32,17 +31,8 @@
               console.log(error)
           })
     },
-    computed: {
-        atHome() {
-          if(this.$route.name === 'Home') {
-            return true
-          } else {
-            return false
-          }
-      }
-    },
     components: {
-        Myheader,
+        Mydefault,
         Mynav,
         Myhome,
         Myfavorites,

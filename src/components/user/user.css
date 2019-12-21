@@ -27,35 +27,35 @@
     padding: 10px 20px;
 }
 .user-card .list-group-item .flag{
-    width: 16px;
-    height: 9px;
+    width: 18px;
+    height: 12px;
     margin-bottom: 3px;
     margin-right: 5px;
 }
 .user-card .list-group-item .female-icon{
     margin-right: 5px;
-    font-size: 8px;
+    font-size: 16px;
     color: #e4365b;
     display: inline-block;
 }
 .user-card .list-group-item .male-icon{
     margin-right: 5px;
-    font-size: 8px;
+    font-size: 16px;
     color: #0c87ce;
     display: inline-block;
 }
 .user-card .list-group-item .fa-baby{
     margin-right: 5px;
-    font-size: 8px;
+    font-size: 16px;
     display: inline-block;
 }
 .user-card .list-group-item .fa-address-card{
     margin-right: 5px;
-    font-size: 8px;
+    font-size: 16px;
     display: inline-block;
 }
 .user-card .list-group-item .fa-envelope{
     margin-right: 5px;
-    font-size: 8px;
+    font-size: 16px;
     display: inline-block;
 }

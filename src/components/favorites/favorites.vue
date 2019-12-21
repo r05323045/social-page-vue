@@ -29,7 +29,6 @@
     import Vue from 'vue'
     import User from '../user/user'
     export default {
-        name: 'Favorites',
         created() {
             this.$nextTick(()=>{
                     //新增滾動
