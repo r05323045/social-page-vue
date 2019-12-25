@@ -1,5 +1,5 @@
 <template>
-        <div>
+        <div class="nav">
             <b-navbar toggleable="lg" type="dark" variant="secondary">
                 <b-navbar-brand href="#">Sofa</b-navbar-brand>
             
@@ -14,20 +14,13 @@
                             favorites
                             <b-badge variant="light">{{alldata.filter(i => i.isLike === 'unlike').length}}</b-badge>
                         </router-link> 
+                        <router-link class="nav-item" to="/search">
+                            <div>search<font-awesome-icon icon="search"></font-awesome-icon></div>
+                        </router-link>
                     </b-navbar-nav>
                 </b-collapse>
             </b-navbar>
         </div>
-        <!--
-        <router-link class="nav-item" to="/home">
-            home
-            <i class="line"></i>
-        </router-link>
-        <router-link class="nav-item" to="/favorites">
-            favorites
-            <i class="line"></i>
-        </router-link>
-        -->
 </template>
 <script>
     export default { 

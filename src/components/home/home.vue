@@ -1,6 +1,6 @@
 <template>
   <div class="main">  
-    <div class="home" :class="{'filter-on': filterOrSearch === 'filter'}">
+    <div class="home">
         <!--user-list-->
         <div class="list-wrapper" ref="listScroll">
             <ul>
@@ -23,8 +23,7 @@
             </div>    
         </b-modal> 
     </div>
-    <Myfilter :alldata="alldata" @filterEvent="showdata=$event" @filterOn="filterOrSearch=$event" :filterOrSearch="filterOrSearch"></Myfilter>
-    <Mysearch :alldata="alldata" @searchEvent="showdata=$event" @searchOn="filterOrSearch=$event" :filterOrSearch="filterOrSearch"></Mysearch>
+    <Myfilter :alldata="alldata" @filterEvent="showdata=$event"></Myfilter>
   </div>
 </template>
 
@@ -33,13 +32,14 @@
   import Vue from 'vue'
   import User from '../user/user'
   import Myfilter from '../filter/filter'
-  import Mysearch from '../search/search'
   export default {
     created() {
-      this.showdata = this.alldata
       this.$nextTick(()=>{
         this.initScroll()
       })
+    },
+    mounted() {
+      this.showdata = this.alldata
     },
     data(){
       return {
@@ -47,7 +47,6 @@
         listScroll: {},
         userDetail: {},
         modalShow: false,
-        filterOrSearch: 'search'
       }
     },
     watch: {
@@ -88,12 +87,10 @@
       BScroll,
       User,
       Myfilter,
-      Mysearch
     }
   }
 </script>
 
 <style>
     @import url('home.css');
-    @import url('../filter/filter.css');
 </style>

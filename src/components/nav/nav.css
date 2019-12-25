@@ -1,18 +1,23 @@
-.navbar {
+.nav .navbar {
+    position: fixed;
     top: 0;
     width: 100%;
     z-index: 999;
 }
-.navbar-nav .nav-item {
+.nav .navbar-nav .nav-item {
     color: white;
     margin: 10px 10px;
 }
 
-.navbar .nav-item {
+.nav .navbar .nav-item {
     display: flex;
 }
 
-.navbar .badge {
+.nav .navbar .badge {
     margin: auto 10px;
     border-radius: 50px;
+}
+
+.nav .navbar svg {
+    margin-left: 10px;
 }

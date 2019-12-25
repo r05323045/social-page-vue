@@ -5,17 +5,16 @@ import Axios from 'Axios'
 import Home from '../components/home/home'
 import Favorites from '../components/favorites/favorites'
 import Default from '../components/default/default'
+import Search from '../components/search/search'
 
 Vue.use(Router)
 Vue.prototype.$axios = Axios
 export default new Router({
-  mode: 'history',
+  mode: 'hash',
   routes: [
     {
       path: '/',
-      redirect: '/default',
       props: true,
-      name: 'Default',
       component: Default
     },
     {
@@ -31,6 +30,15 @@ export default new Router({
       path: '/favorites',
       name: 'Favorites',
       component: Favorites,
+      props: true,
+      meta: {
+        keepAlive: true
+      }
+    },
+    {
+      path: '/search',
+      name: 'Search',
+      component: Search,
       props: true,
       meta: {
         keepAlive: true

@@ -1,8 +1,7 @@
 .main {
-    position: absolute;
-    top: 56px;
+    position: fixed;
     width: 100%;
-    height: 611px;
+    height: 100%;
 }
 .home {
     display: flex;
@@ -10,12 +9,8 @@
     width: 100%;
     transition: 0.5s;
     position: absolute;
-    top: 60px;
-    height: 561px;
-}
-.home.filter-on{
-    top: 100px;
-    transition: 0.5s;
+    top: 110px;
+    height: 100%;
 }
 .home .list-wrapper {
     flex: 1;
@@ -136,10 +131,15 @@
     border: 1px solid #4b4b4b;
 }
 #modal-user {
+    width: 100vw;
 }
 #modal-user .modal-header{
     border: 0;
     height: 30px;
+}
+#modal-user .modal-dialog {
+    width: 80%;
+    margin: auto;
 }
 #modal-user .modal-content{
     border-radius: 30px;
@@ -171,4 +171,209 @@
     color: #4b4b4b;
     background: white;
     border: 1px solid #4b4b4b;
+}
+.filter {
+    width: 100%;
+    height: 40px;
+    position: absolute;
+    top: 70px;
+}
+.filter .filter-group {
+    position: absolute;
+    display: flex;
+    left: 10px;
+    width: 95%;
+    align-items: center;
+}
+.filter .filter-group .clear-filter {
+    border: 0;
+    background: white;
+    outline: none;
+}
+
+.filter .filter-group .icon {
+    margin: 0 10px;
+    font-size: 10px;
+    border-radius: 20px;
+    background: white;
+}
+.filter .filter-group .filter-button {
+    margin: 0px 10px;
+    padding: 5px 10px;
+    border-radius: 30px;
+    font-size: 14px;
+    border-radius: 20px;
+    background: white;
+    color: #6c757d;
+    border: 1px solid #6c757d;
+}
+.filter .filter-group .filter-button:focus{
+    outline: none!important;
+    box-shadow: none!important;
+}
+.filter .filter-group .filter-button.selected{
+    background: #6c757d;
+    color: white;
+}
+#filter-gender,
+#filter-region,
+#filter-age {
+    width: 100vw;
+}
+#filter-gender .modal-dialog,
+#filter-region .modal-dialog,
+#filter-age .modal-dialog {
+    width: 80%;
+    margin: auto;
+}
+#filter-gender .modal-title,
+#filter-region .modal-title,
+#filter-age .modal-title {
+    text-align: center;
+    color: #333333;
+    font-size: 16px;
+    width: 100%;
+}
+#filter-gender .modal-header .close,
+#filter-region .modal-header .close,
+#filter-age .modal-header .close {
+    margin: -16px -16px -16px -32px;
+    float: right;
+}
+#filter-gender .modal-content,
+#filter-region .modal-content,
+#filter-age .modal-content{
+    border-radius: 30px;
+}
+#filter-gender .modal-body,
+#filter-region .modal-body{
+    padding: 10px 10px;
+    justify-content: center;
+}
+#filter-age .modal-body {
+    padding: 30px 10px;
+    justify-content: center;
+}
+#filter-gender .modal-body .buttons,
+#filter-region .modal-body .buttons,
+#filter-age .modal-body .buttons {
+    text-align: center;
+}
+#filter-gender .modal-footer,
+#filter-region .modal-footer,
+#filter-age .modal-footer {
+    padding-top: 5px;
+    border-bottom: 0;
+}
+#filter-gender .modal-footer div,
+#filter-region .modal-footer div,
+#filter-age .modal-footer div {
+    height: 20px;
+}
+#filter-gender .modal-footer .text,
+#filter-region .modal-footer .text,
+#filter-age .modal-footer .text {
+    position: absolute;
+    right: 10%;
+    border: none;
+    background: white;
+    color: #57727f;
+    font-size: 16px;
+}
+#filter-gender .modal-footer .clear,
+#filter-region .modal-footer .clear,
+#filter-age .modal-footer .clear{
+    position: absolute;
+    color: #57727f;
+    left: 10%;
+    font-size: 16px;
+    border: 0;
+    background: white;
+    outline: none;
+}
+#filter-gender .filter-button,
+#filter-region .filter-button,
+#filter-age .filter-button{
+    border-radius: 30px;
+    font-size: 14px;
+    margin: 10px 10px;
+    color: #6c757d;
+    background: white;
+    padding: .375rem .75rem;
+    border:1px solid #6c757d;
+}
+#filter-gender .filter-button:focus,
+#filter-gender .filter-button:active:focus,
+#filter-region .filter-button:focus,
+#filter-region .filter-button:active:focus,
+#filter-age .filter-button:focus,
+#filter-age .filter-button:active:focus{
+    outline: none!important;
+    box-shadow: none!important;
+}
+#filter-gender .filter-button.selected,
+#filter-region .filter-button.selected,
+#filter-age .filter-button.selected{
+    background: #6c757d;
+    color: white;
+}
+#filter-age input {
+    box-shadow: 0;
+    outline: 0;
+}
+#filter-age .range-slider {
+    width: 200px;
+    margin: auto;
+    text-align: center;
+    position: relative;
+}
+#filter-age .range-slider .content {
+    display: flex;
+    flex-direction: row;
+}
+#filter-age .range-slider .value-wrapper {
+    background: #cdcdcc;
+    border-radius: 30px;
+    font-size: 12px;
+    width: 60px;
+    margin: 50px 10px;
+    margin-top: 0;
+}
+#filter-age .range-slider .value-wrapper-middle {
+    font-size: 12px;
+    margin: 50px 10px;
+    margin-top: 0;
+}
+
+#filter-age .range-slider svg,
+#filter-age .range-slider input[type=range] {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+}
+#filter-age input[type=range] {
+    -webkit-appearance: none;
+    width: 100%;
+  }
+#filter-age  input[type=range]::-webkit-slider-runnable-track {
+    width: 100%;
+    height: 5px;
+    cursor: pointer;
+    background: grey;
+    border-radius: 1px;
+    box-shadow: none;
+    border: 0;
+}
+#filter-age input[type=range]::-webkit-slider-thumb {
+    z-index: 2;
+    position: relative;
+    box-shadow: 0px 0px 0px #000;
+    border: 1px solid grey;
+    height: 18px;
+    width: 18px;
+    border-radius: 25px;
+    background: #ffffff;
+    cursor: pointer;
+    -webkit-appearance: none;
+    margin-top: -7px;
 }

@@ -1,12 +1,9 @@
 <template>
     <div class="filter-template">
-        <div class="filter-control" @click.stop="filterOn()" :class="{'filter-on':filterOrSearch === 'filter'}">
-            <font-awesome-icon icon="filter" class="icon"></font-awesome-icon>
-        </div>
         <div class="filter">
             <transition name='filter-on'>
-                <div class="filter-group" v-show="filterOrSearch === 'filter'">
-                    <font-awesome-icon icon="stream" class="icon" size="xs"></font-awesome-icon>
+                <div class="filter-group">
+                    <button @click.stop="clearFilter" class="clear-filter"><font-awesome-icon icon="stream" class="icon" size="xs"></font-awesome-icon></button>
                     <button class="gender filter-button" v-b-modal.filter-gender :class="{'selected': selectFilter.gender.length > 0}">{{this.showSelection('gender')}}</button>
                     <button class="region filter-button" v-b-modal.filter-region :class="{'selected': selectFilter.region.length > 0}">{{this.showSelection('region')}}</button>
                     <button class="age filter-button" v-b-modal.filter-age :class="{'selected': (Math.abs(secAge-fstAge) !== (maxAge-minAge))}" v-if="alldata">{{this.showSelection('age')}}</button>
@@ -19,6 +16,7 @@
                     </div> 
                 </div>
                 <div slot="modal-footer">
+                    <button class="clear" @click.stop="selectFilter.gender=[]">clear</button>
                     <button class="text" @click.stop="showGenderFilter=false">save</button>
                 </div> 
             </b-modal>
@@ -29,6 +27,7 @@
                     </div> 
                 </div>
                 <div slot="modal-footer">
+                    <button class="clear" @click.stop="selectFilter.region=[]">clear</button>
                     <button class="text" @click.stop="showRegionFilter=false">save</button>
                 </div> 
             </b-modal>
@@ -47,6 +46,7 @@
                     </div>
                 </div>
                 <div slot="modal-footer">
+                     <button class="clear" @click.stop="fstAge = minAge; secAge = maxAge">clear</button>
                     <button class="text" @click.stop="showAgeFilter=false">save</button>
                 </div> 
             </b-modal>
@@ -60,7 +60,6 @@
                 showGenderFilter: false,
                 showRegionFilter: false,
                 showAgeFilter: false,
-                copyOffilterOrSearch: 'search',
                 minAge: 0,
                 maxAge: 0,
                 fstAge: 0,
@@ -75,6 +74,12 @@
             },
             filterOrSearch: '',
         },
+        mounted() {
+            this.maxAge = Math.max(...this.alldata.map(i => Number(i.age)))
+            this.minAge = Math.min(...this.alldata.map(i => Number(i.age)))
+            this.fstAge = this.minAge
+            this.secAge = this.maxAge 
+        },
         watch: {
             alldata: function() {
                 this.maxAge = Math.max(...this.alldata.map(i => Number(i.age)))
@@ -82,32 +87,9 @@
                 this.fstAge = this.minAge
                 this.secAge = this.maxAge 
             },
-            filterOrSearch: function () {
-                this.copyOffilterOrSearch = this.filterOrSearch
-                this.selectFilter = {gender: [], region: []},
-                this.maxAge = Math.max(...this.alldata.map(i => Number(i.age)))
-                this.minAge = Math.min(...this.alldata.map(i => Number(i.age)))
-                this.fstAge = this.minAge
-                this.secAge = this.maxAge  
-                this.$emit('filterEvent', this.alldata)
-                
-            }
             
         },
         methods: {
-            filterOn() {
-                this.selectFilter = {gender: [], region: []},
-                this.fstAge = this.minAge
-                this.secAge = this.maxAge 
-                this.$emit('filterEvent', this.alldata)
-                this.copyOffilterOrSearch = this.filterOrSearch
-                if (this.copyOffilterOrSearch === 'filter') {
-                    this.copyOffilterOrSearch = 'search'
-                } else {
-                    this.copyOffilterOrSearch = 'filter'
-                }
-                this.$emit('filterOn', this.copyOffilterOrSearch)
-            },
             valueCount: function(arr) {
                 const category = {}
                 arr.forEach(element => {
@@ -197,10 +179,14 @@
                         break;
                 }            
             },
+            clearFilter() {
+                this.selectFilter =  {gender: [], region: []}
+                this.fstAge = this.minAge
+                this.secAge = this.maxAge
+                let filterContent = this.alldata
+                this.$emit('filterEvent', filterContent)
+            }
         },
-        computed: {
-            
-        }
     }
 </script>
 <style scoped>

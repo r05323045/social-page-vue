@@ -2,7 +2,7 @@
     display: flex;
     position: absolute;
     top: 65px;
-    bottom: 51px;
+    bottom: 0px;
     overflow: hidden;
     width: 100%;
 }
