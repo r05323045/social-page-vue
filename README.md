@@ -6,7 +6,7 @@ mobile device.
 [social-page-vue](https://r05323045.github.io/social-page-vue)
 
 <p align="center">
-  <img height="400px" src="images/social-page-vue-preview.gif" />
+  <img src="images/social-page-vue-preview.gif" />
 </p>
 
 >Because this website is mobile version of [social-page](https://github.com/r05323045/social-page), looking around this website with [Device Mode](https://developers.google.com/web/tools/chrome-devtools/device-mode) is recommended. 
