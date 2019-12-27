@@ -117,6 +117,10 @@
     border: 0;
     height: 30px;
 }
+#modal-fav-user .modal-dialog {
+    width: 80%;
+    margin: auto;
+}
 #modal-fav-user .modal-content{
     border-radius: 30px;
 }
